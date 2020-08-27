@@ -32,7 +32,6 @@ svg
 }
 #bg-canvas
 {
-    animation: bg-run linear 2s infinite;
     background: rgb(91, 188, 147);
 }
 #play-btn-after
@@ -75,13 +74,6 @@ button:focus
 {
     outline: none;
 }
-@keyframes bg-run
-{
-    to 
-    {
-        background-position-y: 64px;
-    }
-}
 @keyframes click-button
 {
     0%
@@ -95,5 +87,54 @@ button:focus
     100%
     {
         top: 50%;
+    }
+}
+.button-bg-change
+{
+    position: absolute;
+    bottom: 84px;
+    left: 20px;
+}
+.button-bg-change button
+{
+    position: absolute;
+}
+.button-bg-change button:hover
+{  
+    bottom: 0px;
+}
+.button-bg-change button:nth-child(1)
+{
+    left:60px;
+}
+.button-bg-change button:nth-child(2)
+{
+    left:50px;
+}
+.button-bg-change button:nth-child(3)
+{
+    left:40px;
+}
+.button-bg-change button:nth-child(4)
+{
+    left:30px;
+}
+.button-bg-change button:nth-child(5)
+{
+    left:20px;
+}
+.button-bg-change button:nth-child(6)
+{
+    left:10px;
+}
+.button-bg-change button:nth-child(7)
+{
+    left:0;
+}
+@keyframes bg-run
+{
+    100%
+    {
+        background-position-y: 64px;
     }
 }

@@ -1,29 +1,23 @@
 const bgCanvas= document.getElementById('bg-canvas');
 const buttonPlayBefore= document.getElementById('play-btn-before');
 const buttonPlayAfter= document.getElementById('play-btn-after');
-let randomBg;
-const urlImage = {
-    bg1:    "url(../NHelicopter/images/background-1.png)",
-    bg2:    "url(../NHelicopter/images/background-2.png)",
-    bg3:    "url(../NHelicopter/images/background-3.png)",
-    bg4:    "url(../NHelicopter/images/background-4.png)",
-    bg5:    "url(../NHelicopter/images/background-5.png)",
-    bg6:    "url(../NHelicopter/images/background-6.png)",
-    bg7:    "url(../NHelicopter/images/background-7.png)",
-};
+const buttonBgChange = document.getElementById('button-bg-change-id');
+let urlBg="url(../images/background-1.png)";
+function changeBg(urlImg)
+{
+    urlBg=urlImg;
+    console.log(urlBg)
+}
 function playGame()
 {
-    randomBg=Math.floor(Math.random()*7+1);
-    console.log(randomBg);
-    this.addEventListener('click',function()
-    {
-        buttonPlayAfter.style.animation="click-button 1s linear";
-    });
-    bgCanvas.style.background="rgb(91, 188, 147),"+ urlImage["bg"+randomBg];
+    buttonPlayAfter.style.animation="click-button 1s linear";
     setTimeout(function()
     {
-        bgCanvas.style.background=urlImage["bg"+randomBg];
+        buttonPlayAfter.style.animation="";
         buttonPlayAfter.style.display="none";
         buttonPlayBefore.style.display="none";
-    },1050);
+        buttonBgChange.style.display="none";
+        bgCanvas.style.animation="bg-run 2s linear infinite"
+        bgCanvas.style.background=urlBg;
+    },1050)
 }
